@@ -1,6 +1,8 @@
 <div class="row mt-4">
   <div class="col">
-    <h3>List Details</h3>
+    <h3>
+      <%= @list.name %>
+    </h3>
   </div>
 </div>
 <div class="row">
@@ -8,10 +10,26 @@
     <hr>
   </div>
 </div>
+
 <div class="row">
-  <div class="col">
-    <h5>
-      <%= @list.name %>
-    </h5>
+  <!-- list begin -->
+  <div class="col border my-1 mx-4 p-4 bg-dark text-white rounded shadow">
+    <ul class="list-group text-dark">
+      <li class="list-group-item py-3">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Add a New List Item">
+            </div>
+          </div>
+        </form>
+      </li>
+
+      <li class="list-group-item py-3">
+        List Item One
+      </li>
+
+    </ul>
   </div>
+  <!-- list end -->
 </div>
