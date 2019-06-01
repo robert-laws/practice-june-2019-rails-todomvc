@@ -13,9 +13,18 @@
   <div class="col border my-1 mx-4 p-4 bg-dark text-white rounded shadow">
     <h4 class="mt-n2">All Lists</h4>
     <ul class="list-group text-dark">
+      <li class="list-group-item py-3">
+        <%= form_for @list do |f| %>
+          <div class="form-row">
+            <div class="col">
+              <%= f.text_field :name, class: "form-control", placeholder: "Add a New List" %>
+            </div>
+          </div>
+        <% end %>
+      </li>
       <% @lists.each do |list| %>
         <li class="list-group-item py-3">
-          <%= link_to list.name, list_path(list) %>
+          <%= link_to make_title_case(list.name), list_path(list) %>
         </li>
       <% end %>
     </ul>

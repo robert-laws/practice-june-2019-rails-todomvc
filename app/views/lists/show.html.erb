@@ -1,8 +1,18 @@
 <div class="row mt-4">
   <div class="col">
     <h3>
-      <%= @list.name %>
+      <%= make_title_case(@list.name) %>
     </h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to "<< Return to Lists", lists_path %>
   </div>
 </div>
 <div class="row">
@@ -16,6 +26,10 @@
   <div class="col border my-1 mx-4 p-4 bg-dark text-white rounded shadow">
     <ul class="list-group text-dark">
       <li class="list-group-item py-3">
+        <%= form_for @list do |f| %>
+
+        <% end %>
+
         <form>
           <div class="form-row">
             <div class="col">
