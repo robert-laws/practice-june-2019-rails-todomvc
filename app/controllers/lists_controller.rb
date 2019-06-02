@@ -16,12 +16,19 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      flash[:notice] = 'The list was successfully saved to the database.'
+      flash[:notice] = 'success|The list was successfully saved to the database.'
       redirect_to list_path(@list)
     else
       @lists = List.all
       render :index
     end
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+
+    redirect_to lists_path
   end
 
   private

@@ -25,6 +25,11 @@
       <% @lists.each do |list| %>
         <li class="list-group-item py-3">
           <%= link_to make_title_case(list.name), list_path(list) %>
+          <span class="float-right">
+            <%= button_to list_path(list), method: :delete, class: "close" do %>
+              <span aria-hidden="true">&times;</span>
+            <% end %>
+          </span>
         </li>
       <% end %>
     </ul>

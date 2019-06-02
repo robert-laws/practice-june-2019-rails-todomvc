@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'items/create'
   root 'lists#index'
 
-  resources :lists, only: [:index, :show, :create] do
-    resources :items, only: [:create, :update]
+  resources :lists, only: %i[index show create destroy] do
+    resources :items, only: %i[create update destroy]
   end
 end

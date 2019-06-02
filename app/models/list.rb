@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class List < ApplicationRecord
-  has_many :items
+  has_many :items, dependent: :destroy
 
   validates :name,
-    presence: true
+            presence: true
 
   def name=(value)
     value = value.downcase
