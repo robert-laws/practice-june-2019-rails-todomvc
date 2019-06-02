@@ -17,7 +17,7 @@
         <%= form_for @list do |f| %>
           <div class="form-row">
             <div class="col">
-              <%= f.text_field :name, class: "form-control", placeholder: "Add a New List" %>
+              <%= f.text_field :name, class: "form-control", placeholder: "#{@list.errors.full_messages_for(:name).first || 'Add a New List Name'}" %>
             </div>
           </div>
         <% end %>

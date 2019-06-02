@@ -26,23 +26,19 @@
   <div class="col border my-1 mx-4 p-4 bg-dark text-white rounded shadow">
     <ul class="list-group text-dark">
       <li class="list-group-item py-3">
-        <%= form_for @list do |f| %>
-
-        <% end %>
-
-        <form>
+        <%= form_for [@list, @item] do |f| %>
           <div class="form-row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Add a New List Item">
+              <%= f.text_field :description, class: "form-control", placeholder: "#{@item.errors.full_messages_for(:description).first || 'Add a New Item'}" %>
             </div>
           </div>
-        </form>
+        <% end %>
       </li>
-
-      <li class="list-group-item py-3">
-        List Item One
-      </li>
-
+      <% @list.items.each do |item| %>
+        <li class="list-group-item py-3">
+          <%= item.description %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <!-- list end -->
