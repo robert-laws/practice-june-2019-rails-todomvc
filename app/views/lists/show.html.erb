@@ -34,16 +34,7 @@
           </div>
         <% end %>
       </li>
-      <% @list.items.each do |item| %>
-        <li class="list-group-item py-3 <%= 'completed' if item.complete? %>">
-          <%= form_for [@list, item], html: { class: "check-form" } do |f| %>
-            <%= f.check_box :status, class: "toggle", checked: (true if item.complete?) %>
-          <% end %>
-          <span class="pl-3">
-            <%= item.description %>
-          </span>
-        </li>
-      <% end %>
+      <%= render collection: @list.items, partial: "items/item_list_item", as: :item %>
     </ul>
   </div>
   <!-- list end -->
