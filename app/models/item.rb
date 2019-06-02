@@ -1,10 +1,23 @@
 class Item < ApplicationRecord
   belongs_to :list
 
+  validates :description,
+    presence: true
+
   # after_validation do |item|
   #   item.destroy if item.description.blank?
   # end
 
-  validates :description,
-    presence: true
+  STATUS = {
+    incomplete: 0,
+    complete: 1
+  }
+
+  def complete?
+    self.status == STATUS[:complete]
+  end
+
+  def incomplete?
+    self.status == STATUS[:incomplete]
+  end
 end

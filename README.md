@@ -10,3 +10,13 @@ practice app with Ruby on Rails
 
 <% end %>
 ```
+
+Javascript to submit form on checkbox change
+
+```javascript
+$(function() {
+  $("input.toggle").on("change", function() {
+    $(this).parents("form").trigger("submit")
+  })
+})
+```

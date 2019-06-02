@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root 'lists#index'
 
   resources :lists, only: [:index, :show, :create] do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :update]
   end
 end

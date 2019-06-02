@@ -6,3 +6,11 @@
   border: 1px solid red;
   border-radius: 0.25rem;
 }
+
+.completed span {
+  text-decoration: line-through;
+}
+
+.check-form {
+  display: inline-block;
+}
