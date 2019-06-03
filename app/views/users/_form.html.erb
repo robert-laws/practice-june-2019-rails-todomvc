@@ -1,0 +1,13 @@
+<%= error_messages_for(f.object) %>
+
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email, class: "form-control", placeholder: "Please enter an email" %>
+  <% if @user.errors[:email].present? %>
+    <small id="emailHelp" class="form-text text-danger"><%= @user.errors.full_messages_for(:email).join("") %></small>
+  <% end %>
+</div>
+
+<div class="form-group">
+  <%= f.submit submit_text, class: "btn btn-primary" %>
+</div>

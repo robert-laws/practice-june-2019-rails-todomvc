@@ -51,3 +51,30 @@ Convention for Naming
   </span>
 <% end %>
 ```
+
+Authentication - is the user who they say they are?
+
+Signup
+- GET /users/new -> users#new -> form
+- POST /users -> users#create -> create user in db
+
+Login
+- GET /login -> sessions#new -> form
+- POST /sessions -> sessions#create -> log the user in
+
+Forms - messages across the web
+
+`<form></form>` -> envelop for message
+
+`<form action="/users"></form>` -> action is address field of where form is going (where it submits)
+
+`<form action="/users" method="POST"></form>` -> method is how message should be sent
+
+Information going to be sent in a POST request via input values as `user[name]` contained within the `params` hash.
+
+```html
+<form action="/users" method="POST">
+  <input type="text" name="user[email]" id="user_email">
+</form>
+```
+

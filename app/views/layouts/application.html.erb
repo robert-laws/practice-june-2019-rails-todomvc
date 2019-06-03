@@ -11,6 +11,13 @@
 
   <body>
     <%= render "layouts/notice" %>
+
+    <div class="container">
+      <div class="row mt-3">
+        <%= render "layouts/user_info" %>
+        <%= render "layouts/logout" %>
+      </div>
+    </div>
     
     <div class="container">
       <%= yield %>
