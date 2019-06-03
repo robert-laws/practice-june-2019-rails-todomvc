@@ -78,3 +78,6 @@ Information going to be sent in a POST request via input values as `user[name]` 
 </form>
 ```
 
+Password Encryption - `has_secure_password`
+
+Adds new method to model `user#authenticate`

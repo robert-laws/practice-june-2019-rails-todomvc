@@ -4,7 +4,15 @@
   <%= f.label :email %>
   <%= f.text_field :email, class: "form-control", placeholder: "Please enter an email" %>
   <% if @user.errors[:email].present? %>
-    <small id="emailHelp" class="form-text text-danger"><%= @user.errors.full_messages_for(:email).join("") %></small>
+    <small id="emailHelp" class="form-text text-danger"><%= raw @user.errors.full_messages_for(:email).join("<br>") %></small>
+  <% end %>
+</div>
+
+<div class="form-group">
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control", placeholder: "Please enter a password" %>
+  <% if @user.errors[:password].present? %>
+    <small id="passwordHelp" class="form-text text-danger"><%= raw @user.errors.full_messages_for(:password).join("<br>") %></small>
   <% end %>
 </div>
 

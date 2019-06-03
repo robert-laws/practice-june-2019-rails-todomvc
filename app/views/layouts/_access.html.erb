@@ -1,5 +1,7 @@
 <div class="col-6">
   <% if logged_in? %>
     <%= link_to "Logout", logout_path, class: "float-right mr-3" %>
+  <% else %>
+    <%= link_to "Login", login_path, class: "float-right mr-3"  %>
   <% end %>
 </div>
